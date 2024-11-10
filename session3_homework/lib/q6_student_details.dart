@@ -6,7 +6,7 @@ void main() {
 //- Task 2: Iterate over the map and
 // print each key-value pair
 
-  final student = {
+  Map<String, dynamic> student = {
     'name': 'weam',
     'age': 21,
     'grade': 'graduation year',
