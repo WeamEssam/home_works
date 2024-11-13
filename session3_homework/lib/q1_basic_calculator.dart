@@ -34,10 +34,14 @@ double subtraction(double number1, double number2) {
   }
 }
 
-double multiplication(double number1, double number2) {
-  return number1 * number2;
+double multiplication(double number1, double number2, [double number3 = 1]) {
+  return number1 * number2 * number3;
 }
 
 double division(double number1, double number2) {
-  return number1 / number2;
+  if (number2 != 0) {
+    return number1 / number2;
+  } else {
+    return 0;
+  }
 }

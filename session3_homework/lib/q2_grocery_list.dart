@@ -8,9 +8,14 @@ void main() {
 // Make sure to handle possible null values.
 
   List<String> grocery = ['milk', 'tea', 'chips', 'chocolate'];
-  print(grocery_items(grocery, newItem: 'cheese'));
+  print(grocery_items(grocery, newItem: 'cheese', removeItem: 'chips'));
+  addItems(grocery: grocery, item: 'rice');
+  removeItems(grocery, 'milk');
+  print(grocery);
+  displayGroceryItems(grocery);
 }
 
+// my code
 List<String> grocery_items(List<String> grocery,
     {String? newItem, String? removeItem}) {
   if (newItem != null) {
@@ -20,4 +25,23 @@ List<String> grocery_items(List<String> grocery,
     grocery.remove(removeItem);
   }
   return grocery;
+}
+
+//eng.tharwt samy
+void addItems({required List<String> grocery, required String item}) {
+  grocery.add(item);
+}
+
+void removeItems(List<String> grocery, String item) {
+  grocery.remove(item);
+}
+
+void displayGroceryItems(List<String> grocery) {
+  if (grocery.isNotEmpty) {
+    for (var item in grocery) {
+      print(item);
+    }
+  } else {
+    print('grocery list is empty');
+  }
 }
