@@ -1,14 +1,45 @@
-//  Create a function called calculateArea
-//that takes two parameters: length and width.
-//The function should return the
-// area of a rectangle.
-// Call the function and print the result.
+// create a small program that includes the following:
+//- An abstract class `Animal` with:
+//   - A method `makeSound()` (abstract).
+//   - A concrete method `describe()`
+//that prints "I am an animal.".
+//- A class `Dog` that:
+//   - Inherits from `Animal`.
+//   - Implements the `makeSound()` method to print "Bark!".
+//- A mixin `RunFast` that:
+//   - Adds a method `run()` that prints "I run fast!".
+//- A class `Greyhound` that:
+//   - Extends `Dog`.
+//   - Mixes in `RunFast`.
+//  In the `main()` function:
+//- Create an instance of `Greyhound`.
+//- Call `makeSound()`, `describe()`, and `run()` on the instance
 
 void main() {
-  double area = calculateArea(10, 20);
-  print(area);
+  Greyhound greyhound = Greyhound();
+  greyhound.makeSound();
+  greyhound.describe();
+  greyhound.run();
 }
 
-double calculateArea(double length, double width) {
-  return length * width;
+abstract class Animal {
+  void makeSound();
+  void describe() {
+    print("I am an animal.");
+  }
 }
+
+mixin RunFast {
+  void run() {
+    print("I run fast!");
+  }
+}
+
+class Dog extends Animal {
+  @override
+  void makeSound() {
+    print("Bark!");
+  }
+}
+
+class Greyhound extends Dog with RunFast {}
