@@ -28,3 +28,22 @@ class Solution {
     return maxProfit;
   }
 }
+
+
+
+
+//////////// Time Limit Exceeded (O(n)^2)
+// class Solution {
+//   int maxProfit(List<int> prices) {
+//     int maxProfit = 0;
+
+//     for (int i = 0; i < prices.length; i++) {
+//       for (int j = i + 1; j < prices.length; j++) {
+//         if (prices[j] - prices[i] > maxProfit) {
+//           maxProfit = prices[j] - prices[i];
+//         }
+//       }
+//     }
+//     return maxProfit;
+//   }
+// }
